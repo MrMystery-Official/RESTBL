@@ -16,6 +16,7 @@ public:
 	void SetFileSize(uint32_t Hash, uint32_t Value);
 	void SetFileSize(std::string Key, uint32_t Value);
 
+	uint32_t GenerateCrc32Hash(std::string Key);
 	std::vector<unsigned char> ToBinary();
 	void WriteToFile(std::string Path);
 
@@ -48,5 +49,4 @@ private:
 	ResTableFile::Header m_Header;
 
 	void GenerateCrcTable();
-	uint32_t GenerateCrc32Hash(std::string Key);
 };
