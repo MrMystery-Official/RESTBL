@@ -124,7 +124,6 @@ ResTableFile::ResTableFile(std::vector<unsigned char> Data)
         }
         NameEntry.Size = Reader.ReadUInt32();
         this->m_NameEntries[i] = NameEntry;
-        std::cout << "Name: " << NameEntry.Name << ", Size: " << NameEntry.Size << std::endl;
     }
 }
 
