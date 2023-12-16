@@ -21,7 +21,8 @@ void ResTableFile::GenerateCrcTable()
     }
 }
 
-uint32_t ResTableFile::GenerateCrc32Hash(std::string Key) {
+uint32_t ResTableFile::GenerateCrc32Hash(std::string Key)
+{
     uint32_t CRC = 0xFFFFFFFF;
     const uint8_t* u = reinterpret_cast<const uint8_t*>(Key.c_str());
     for (size_t i = 0; i < Key.length(); ++i)
