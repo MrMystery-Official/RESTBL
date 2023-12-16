@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 
 #include "BinaryVectorReader.h"
 #include "BinaryVectorWriter.h"

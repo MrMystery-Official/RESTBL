@@ -161,6 +161,8 @@ std::vector<unsigned char> ResTableFile::ToBinary()
     Writer.WriteInteger(this->m_CrcEntries.size(), sizeof(uint32_t)); //CrcMapCount
     Writer.WriteInteger(this->m_NameEntries.size(), sizeof(uint32_t)); //NameMapCount
 
+    std::sort(this->m_CrcEntries.begin(), this->m_CrcEntries.end(), [](ResTableFile::CrcEntry A, ResTableFile::CrcEntry B) { return A.Hash < B.Hash; });
+
     for (ResTableFile::CrcEntry CrcEntry : this->m_CrcEntries)
     {
         Writer.WriteInteger(CrcEntry.Hash, sizeof(uint32_t));
